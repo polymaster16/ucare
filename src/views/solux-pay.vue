@@ -13,23 +13,31 @@
       </span>
       <input
         type="text"
+        v-model="name"
         name="Name"
         placeholder="Your Name"
         class="solux-pay-textinput input"
       />
       <input
+      v-model="email"
         type="text"
         name="Name"
         placeholder="Your Email"
         class="solux-pay-textinput1 input"
       />
       <input
+      v-model="matricle"
         type="text"
         name="Name"
         placeholder="Your matricle"
         class="solux-pay-textinput2 input"
       />
-      <button class="solux-pay-find button">
+
+      <div class="errorClass" v-if="error.visible">
+        {{ error.message }}
+      </div>
+      <button @click="submit()"
+       class="solux-pay-find button">
         <span>
           <span class="solux-pay-text3">Receive Solutions</span>
           <br />
@@ -44,22 +52,60 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'SoluxPay',
-  metaInfo: {
-    title: 'SoluxPay - Dependable Secret Vulture',
-    meta: [
-      {
-        property: 'og:title',
-        content: 'SoluxPay - Dependable Secret Vulture',
-      },
-    ],
-  },
-}
+<script setup>
+    import {ref, reactive} from 'vue'
+
+    const name= ref('')
+    const email= ref('')
+    const matricle= ref('')
+
+    const error = reactive({message:'', visible:false})
+
+    const submit = () => {
+      console.log("clicked")
+      if(name.value === ''){
+        error.visible =true
+        error.message = 'Please enter Your Full name'
+      }
+      else   if(email.value === ''){
+        error.visible =true
+        error.message = 'Please provide us with your email'
+      }
+      else   if(matricle.value === ''){
+        error.visible =true
+        error.message = 'Please provide us with your ICTU matricle'
+      }
+      else   if(!email.value.includes('.ictuniversity.edu.cm')){
+        error.visible =true
+        error.message = 'Please enter your ICTU email with extension .ictuniversity.edu.cm'
+      }
+      else   if(!matricle.value.includes('ICTU')){
+        error.visible =true
+        error.message = 'Please your matric should be in the format ICTUXXXXXXXX'
+      }
+      else   if(matricle.value.length != 12){
+        error.visible =true
+        error.message = 'Please enter a valid matric number'
+      }
+      else{
+        error.visible =false
+       // windows.location.href = 'https://wa.me/675903349'
+       window.open(`https://wa.me/675903349?text=Hello, my name is ${name.value} 
+       and I'm interested in buying the JAVA Programming 2. my email is ${email.value} 
+       and my matricle is ${matricle.value}'`)
+      }
+
+
+
+    }
+
 </script>
 
 <style scoped>
+.errorClass{
+  margin-top: 3%;
+  color:#E93F1A
+}
 .solux-pay-container {
   width: 100%;
   display: flex;
