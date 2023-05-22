@@ -71,13 +71,13 @@
         error.visible =true
         error.message = 'Please provide us with your email'
       }
-      else   if(matricle.value === ''){
-        error.visible =true
-        error.message = 'Please provide us with your ICTU matricle'
-      }
       else   if(!email.value.includes('.ictuniversity.edu.cm')){
         error.visible =true
         error.message = 'Please enter your ICTU email with extension .ictuniversity.edu.cm'
+      }
+      else   if(matricle.value === ''){
+        error.visible =true
+        error.message = 'Please provide us with your ICTU matricle'
       }
       else   if(!matricle.value.includes('ICTU')){
         error.visible =true
