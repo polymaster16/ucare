@@ -8,6 +8,7 @@ import SignIn from '../views/sign-in.vue'
 import Start from '../views/start.vue'
 
 const router = createRouter({
+  
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
