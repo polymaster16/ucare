@@ -34,7 +34,7 @@
             </div>
 
 
-            <div  v-on:click="m4=true; m1=false; m2=false;" 
+            <div  v-on:click="m4=true" 
              class="start-container6" v-if="m3" v-motion-pop>
               <span class="start-text07">
                 <span class="start-text08">2.</span>
@@ -57,38 +57,123 @@
             </div>
 
             <div
-            class="start-container4" v-if="m4" v-motion-pop> 
-            <span class="start-text07">
-            <van-cell-group inset>
-  <van-field v-model="name" label="Your Name" />
-  <van-field v-model="phone" type="number" label="Phone" placeholder="600 00 00 00" />
-  <van-field
-  v-model="result"
-  is-link
-  readonly
-  name="datePicker"
-  label="Date Picker"
-  placeholder="Select date"
-  @click="showPicker = true"
-/>
-<van-popup v-model:show="showPicker" position="top">
-  <van-date-picker  title="YY - MM - DD"
-  :min-date="minDate"
-  :max-date="maxDate"
-   @confirm="onConfirm" @cancel="showPicker = false" />
-</van-popup>
+            class="start-container40" v-if="m4" v-motion-pop> 
+            <div>
+    <v-text-field
+    variant="outlined"
+      v-model="name"
+      label="Name"
+    ></v-text-field>
 
-<button class="login-find button">
+    <v-text-field
+    variant="outlined"
+      v-model="phone"
+      type="number"
+      label="Phone Number"
+    ></v-text-field>
+    <v-text-field
+    variant="outlined"
+      v-model="dob"
+      type="date"
+      label="Date of birth"
+    ></v-text-field>
+
+
+<div class="errorClass" v-if="error1.visible">
+  {{ error1.message }}
+</div>
+
+<button @click="validateForm1" class="login-find button">
               <span>
                 <span class="login-text09">Continue</span>
                 <br />
               </span>
             </button>
+     </div>
+    </div>
 
-</van-cell-group>
-</span>
-     
+     <div  class="start-container4" v-if="m5" v-motion-roll-left>
+              <img
+                alt="image"
+                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=ffd5dc&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
+                class="start-image"
+              />
+              <span class="start-text">
+             Now, setup a password for your account.
+                 
+              </span>
             </div>
+
+
+
+            <div
+            class="start-container40" v-if="m6" v-motion-pop> 
+<div>
+            <v-text-field
+            width="100"
+    variant="outlined"
+      v-model="password1"
+      type="password"
+      label="Enter a password"
+    ></v-text-field>
+
+    <v-text-field
+    variant="outlined"
+      v-model="password2"
+      type="password"
+      label="Enter a password"
+    ></v-text-field>
+           
+<div class="errorClass" v-if="error2.visible">
+  {{ error2.message }}
+</div>
+
+<button @click="validateForm2" class="login-find button">
+              <span>
+                <span class="login-text09">Continue</span>
+                <br />
+              </span>
+            </button>
+          </div>
+
+     </div>
+
+     <div  class="start-container4" v-if="m7" v-motion-roll-left>
+              <img
+                alt="image"
+                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=ffd5dc&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
+                class="start-image"
+              />
+              <span class="start-text">
+             We're almost done. Just check the box below and you're good to go!
+                 
+              </span>
+            </div>
+
+
+
+            <div
+            class="start-container40" v-if="m8" v-motion-pop> 
+<div>
+  <v-switch v-model="checked"
+  color="red-lighten-1" label="I agree to all the terms and blablabla"></v-switch>
+           
+<div class="errorClass" v-if="error3.visible">
+  {{ error3.message }}
+</div>
+
+<van-button :loading="loading" @click="validateForm3" class="login-find button">
+              <span>
+                <span class="login-text09">Confirm</span>
+                <br />
+              </span>
+            </van-button>
+          </div>
+
+     </div>
+
+
+     
 
 
 
@@ -104,26 +189,115 @@
   
   <script setup>
   import NavbarInteractive from '../components/navbar-interactive.vue'
-  import { ref, onMounted } from 'vue';
+  import { ref, onMounted, reactive } from 'vue';
+  import {database} from '../supabase.js';
+
+
 
     const m1 = ref(false)
     const m2 = ref(false)
     const m3 = ref(false)
     const m4 = ref(false)
+    const m5 = ref(false)
+    const m6 = ref(false)
+    const m7 = ref(false)
+    const m8 = ref(false)
+
+
+    const showKeyboard = ref(false);
+
+    const loading=ref(false)
 
    const minDate = new Date(1965, 1, 1)
    const maxDate = new Date(2005, 1, 1)
 const name= ref('')
-const phone= ref()
+const phone= ref('')
 
-    const result = ref('');
-    const showPicker = ref(false);
-    const onConfirm = ({ selectedValues }) => {
-      result.value = selectedValues.join('/');
-      showPicker.value = false;
-    };
+const password1= ref('')
+const password2= ref('')
 
+const dob = ref(new Date())
+const checked= ref()
+  
+    const error1 =  reactive({message:"", visible:false})
+    const error2 =  reactive({message:"", visible:false})
+    const error3 =  reactive({message:"", visible:false})
+
+
+    const validateForm1 =()=>{
+      if(name.value === ''){
+        error1.visible = true;
+      error1.message = "Name cannot be empty";
+      } else
+     if(phone.value.length !=9){
+      error1.visible = true;
+      error1.message = "Enter a valid phone number";
+     } else
+     if(dob.value === ""){
+        error1.visible = true;
+      error1.message = "Date of birth cannot be empty";
+      }
+      else{
+        error1.visible = false;
+        m5.value = true
+        m6.value = true
+        m1.value = false
+        m2.value = false
+        m3.value = false
+
+
+
+      }
+    }
+
+    const validateForm2 =()=>{
+      if(password1.value === "") {
+        error2.visible = true;
+      error2.message = "Come on, setup a password...";
+    } else
+      if(password1.value != password2.value) {
+        error2.visible = true;
+      error2.message = "Passwords do not match";
+    }
+    else{
+      error2.visible = false;
+      m7.value = true
+      m8.value = true
+    }
+  }
+
+  const validateForm3 = async()=>{
+    if(!checked.value){
+      error3.visible = true
+      error3.message = "You must agree in other to proceed"
+    }
+    else{
+      error3.visible = false
+      loading.value = true;
+
+      try { 
+        loading.value = true;
+       await database
+       .from('nannies')
+     .insert([{
+       name: name.value,
+      phone: phone.value,
+      dob: dob.value,
+      password: password1.value,
+     avatar: 'https://www.nicepng.com/png/detail/52-521023_download-free-icon-female-vectors-blank-facebook-profile.png',
+     bio:'',
+      location:"yaoundé"
+    }])
+      loading.value = false;
+
+      } catch (error) {
+        console.log('err: ', error.message);
+      }
+
+    }
+  } 
     onMounted(() => {
+      
         setTimeout(() => {
             m1.value = true;
         }, 1000);
@@ -139,6 +313,11 @@ const phone= ref()
   </script>
   
   <style scoped>
+  .errorClass{
+    margin-top: 5%;
+color: #ff8896;
+font-size: medium;
+  }
   .start-container {
     width: 100%;
     display: flex;
@@ -162,6 +341,7 @@ background: linear-gradient(90deg, rgba(167,198,251,1) 0%, rgba(217,131,163,1) 1
     background-image: url('https://post.healthline.com/wp-content/uploads/2020/11/834360-Best-Babysitting-websites-and-Apps-1200x628-Facebook-1200x628.jpg');
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
  
   }
   .start-container2 {
@@ -175,6 +355,7 @@ background: linear-gradient(90deg, rgba(167,198,251,1) 0%, rgba(217,131,163,1) 1
     background-color: rgba(0, 0, 0, 0.36);
     background-size: cover;
     padding-bottom: 50%;
+
     padding-top: 5%;
   }
   .start-container3 {
@@ -199,6 +380,14 @@ background: linear-gradient(90deg, rgba(167,198,251,1) 0%, rgba(217,131,163,1) 1
     padding-right: 3vw;
     padding-bottom: 3vw;
     justify-content: flex-start;
+    background-color: #ffffff;
+  }
+  .start-container40 {
+    width: 100%;
+    height: auto;
+   padding: 3vw;
+    border-radius: 24px;
+    margin-bottom: var(--dl-space-space-oneandhalfunits);
     background-color: #ffffff;
   }
   .start-image {
@@ -283,7 +472,7 @@ background: linear-gradient(90deg, rgba(167,198,251,1) 0%, rgba(217,131,163,1) 1
   color: var(--dl-color-gray-white);
   align-self: center;
   font-style: normal;
-  margin-top: var(--dl-space-space-threeunits);
+  margin-top: var(--dl-space-space-unit);
   transition: 0.3s;
   font-weight: 500;
   padding-top: var(--dl-space-space-unit);
@@ -298,7 +487,14 @@ background: linear-gradient(90deg, rgba(167,198,251,1) 0%, rgba(217,131,163,1) 1
   opacity: 0.5;
 }
 @media(max-width: 991px) {
-
+  .start-container40 {
+    width: 100%;
+    height: auto;
+   padding: 5vw;
+    border-radius: 24px;
+    margin-bottom: var(--dl-space-space-oneandhalfunits);
+    background-color: #ffffff;
+  }
   .login-find {
     width: 139px;
     text-align: center;
@@ -311,6 +507,14 @@ background: linear-gradient(90deg, rgba(167,198,251,1) 0%, rgba(217,131,163,1) 1
   }
 }
 @media(max-width: 767px) {
+  .start-container40 {
+    width: 100%;
+    height: auto;
+   padding: 8vw;
+    border-radius: 24px;
+    margin-bottom: var(--dl-space-space-oneandhalfunits);
+    background-color: #ffffff;
+  }
   .login-find {
     width: 137px;
   }

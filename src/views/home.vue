@@ -10,7 +10,7 @@
             Find the perfect nanny for your household Today
           </span>
           <div class="home-container04">
-            <button class="home-find button">Start Now</button>
+            <button @click="router.push('/start')" class="home-find button">Start Now</button>
           </div>
         </div>
       </div>
@@ -152,7 +152,7 @@
 <script>
 import NavbarInteractive from '../components/navbar-interactive.vue'
 import AppFooter from '../components/footer.vue'
-
+import { useRouter } from 'vue-router'
 export default {
   name: 'Home',
   components: {
@@ -161,6 +161,7 @@ export default {
   },
   data() {
     return {
+      router: useRouter(),
       raw7dh2: ' ',
       rawixd7: ' ',
       rawl6nh: ' ',
@@ -179,6 +180,7 @@ export default {
     ],
   },
   setup(){
+    //const router = useRouter()
     console.log("setup function working")
   }
 }
