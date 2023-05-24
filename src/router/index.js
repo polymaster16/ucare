@@ -46,6 +46,12 @@ const router = createRouter({
       path: '/start',
       component: Start,
     },
+    ,
+    {
+      name: 'nanny',
+      path: '/nannies/:id',
+      component: ()=> import('../views/nannies/id.vue'),
+    },
   ]
 })
 

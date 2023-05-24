@@ -34,7 +34,7 @@
             </div>
 
 
-            <div  v-on:click="m4=true" 
+            <div  v-on:click="m4=true; m1=false; m2=false; m3=false" 
              class="start-container6" v-if="m3" v-motion-pop>
               <span class="start-text07">
                 <span class="start-text08">2.</span>
@@ -43,7 +43,7 @@
             </div>
 
 
-            <div  class="start-container4" v-if="m4" v-motion-roll-left>
+            <div  class="start-container4" v-if="m4" v-motion-slide-left>
               <img
                 alt="image"
                 src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=ffd5dc&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
@@ -57,7 +57,7 @@
             </div>
 
             <div
-            class="start-container40" v-if="m4" v-motion-pop> 
+            class="start-container40" v-if="m4" v-slide-left> 
             <div>
     <v-text-field
     variant="outlined"
@@ -92,7 +92,7 @@
      </div>
     </div>
 
-     <div  class="start-container4" v-if="m5" v-motion-roll-left>
+     <div  class="start-container4" v-if="m5" v-motion-slide-left>
               <img
                 alt="image"
                 src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=ffd5dc&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
@@ -107,7 +107,7 @@
 
 
             <div
-            class="start-container40" v-if="m6" v-motion-pop> 
+            class="start-container40" v-if="m6" v-motion-slide-left> 
 <div>
             <v-text-field
             width="100"
@@ -138,7 +138,7 @@
 
      </div>
 
-     <div  class="start-container4" v-if="m7" v-motion-roll-left>
+     <div  class="start-container4" v-if="m7" v-motion-slide-left>
               <img
                 alt="image"
                 src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=ffd5dc&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
@@ -153,7 +153,7 @@
 
 
             <div
-            class="start-container40" v-if="m8" v-motion-pop> 
+            class="start-container40" v-if="m8" v-slide-left> 
 <div>
   <v-switch v-model="checked"
   color="red-lighten-1" label="I agree to all the terms and blablabla"></v-switch>
@@ -177,6 +177,27 @@
 
 
 
+     <div class="start-container4" v-if="m9" v-motion-slide-left>
+              <img
+                alt="image"
+                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=ffd5dc&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
+                class="start-image"
+              />
+              <span class="start-text">
+              Congrats, your account have been created successfully
+              </span>
+            </div>
+
+
+            <div @click="router.push('/login')"
+            class="start-container5" v-if="m10"  v-motion-slide-left> 
+              <span class="start-text04">
+                <span class="start-text05">1.</span>
+                <span> Login into my account 🔓 </span>
+              </span>
+            </div>
+
+
 
           </div>
 
@@ -191,8 +212,9 @@
   import NavbarInteractive from '../components/navbar-interactive.vue'
   import { ref, onMounted, reactive } from 'vue';
   import {database} from '../supabase.js';
+  import { useRouter } from 'vue-router';
 
-
+const router = useRouter()
 
     const m1 = ref(false)
     const m2 = ref(false)
@@ -202,6 +224,11 @@
     const m6 = ref(false)
     const m7 = ref(false)
     const m8 = ref(false)
+    const m9 = ref(false)
+    const m10 = ref(false)
+    const m11 = ref(true)
+
+
 
 
     const showKeyboard = ref(false);
@@ -244,6 +271,7 @@ const checked= ref()
         m1.value = false
         m2.value = false
         m3.value = false
+        m4.value = false
 
 
 
@@ -263,6 +291,11 @@ const checked= ref()
       error2.visible = false;
       m7.value = true
       m8.value = true
+      m3.value = false
+      m4.value = false
+      m5.value = false
+      m6.value = false
+
     }
   }
 
@@ -279,16 +312,24 @@ const checked= ref()
         loading.value = true;
        await database
        .from('nannies')
-     .insert([{
+     .insert({
        name: name.value,
       phone: phone.value,
       dob: dob.value,
       password: password1.value,
      avatar: 'https://www.nicepng.com/png/detail/52-521023_download-free-icon-female-vectors-blank-facebook-profile.png',
      bio:'',
-      location:"yaoundé"
-    }])
+      location:"yaoundé",
+    })
+      m7.value = false
+      m8.value = false
+      m9.value = true
+      m10.value = true
+
+      localStorage.setItem('@name', name.value)
+      localStorage.setItem('@password', password1.value)
       loading.value = false;
+
 
       } catch (error) {
         console.log('err: ', error.message);

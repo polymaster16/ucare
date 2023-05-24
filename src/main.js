@@ -19,6 +19,13 @@ import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 
+
+import { OhVueIcon, addIcons } from "oh-vue-icons";
+import { FaPencilAlt } from "oh-vue-icons/icons";
+import { FaFlag, RiZhihuFill } from "oh-vue-icons/icons";
+
+addIcons(FaFlag, RiZhihuFill, FaPencilAlt);
+
 const vuetify = createVuetify({
   components,
   directives,
@@ -30,5 +37,6 @@ app.use(createPinia())
 app.use(router)
 app.use(MotionPlugin)
 app.use(vuetify)
+app.component("v-icon", OhVueIcon);
 
 app.mount('#app')

@@ -21,6 +21,7 @@
               <span class="login-text06">Name</span>
             </span>
             <input
+            v-model="name"
               type="text"
               required
               placeholder="Your name"
@@ -28,17 +29,23 @@
             />
             <span class="login-text07">-Password</span>
             <input
+            v-model="password"
               type="password"
               required
               placeholder="Your password"
               class="login-textinput1 input"
             />
-            <button class="login-find button">
+            <van-button :loading="loading"
+             @click="login" class="login-find button">
               <span>
                 <span class="login-text09">Continue</span>
                 <br />
               </span>
-            </button>
+            </van-button>
+            <router-link to="/start"
+            class="create-acc">Create an account instead
+          </router-link >
+
           </div>
         </div>
       </div>
@@ -47,36 +54,76 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import NavbarInteractive from '../components/navbar-interactive.vue'
 import AppBack from '../components/back.vue'
 import AppFooter from '../components/footer.vue'
 
-export default {
-  name: 'Login',
-  components: {
-    NavbarInteractive,
-    AppBack,
-    AppFooter,
-  },
-  data() {
-    return {
-      rawxbfx: ' ',
-    }
-  },
-  metaInfo: {
-    title: 'Login - Dependable Secret Vulture',
-    meta: [
-      {
-        property: 'og:title',
-        content: 'Login - Dependable Secret Vulture',
-      },
-    ],
-  },
+import { useRouter } from 'vue-router';
+import { ref, onMounted } from 'vue';
+
+import { database } from '../supabase';
+import { SupabaseAuthClient } from '@supabase/supabase-js/dist/module/lib/SupabaseAuthClient';
+
+const name = ref()
+const password = ref()
+
+const router = useRouter()
+const loading= ref(false)
+
+
+const login = async() => {
+  const str = ref()
+  const str2 = ref()
+  loading.value = true
+  try{
+    const { data, error } = await database
+  .from('nannies')
+  .select('*')
+
+  str.value = data.filter((x)=> x.password === password.value)
+  str2.value = data.filter((x)=> x.name === name.value)
+
+  console.log(str.value)
+  if(str.value.length > 0 && str2.value.length > 0 ){
+    localStorage.setItem('@name', name.value)
+    localStorage.setItem('@password', password.value)
+    router.push(`/nannies/${str2.value[0].id}`) 
+    loading.value = false
+  } else {
+    alert("wrong username or password. Try again please")
+    name.value =""
+    password.value =""
+    loading.value = false
+  }
+  }
+  catch(error) {
+    alert("error: "+error.message)
+
 }
+}
+
+
+onMounted(() => {
+  name.value= localStorage.getItem('@name')
+  password.value= localStorage.getItem('@password')
+})
+
 </script>
 
 <style scoped>
+.create-acc{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  color: #ff4d4f;
+  font-size: 14px;
+  font-style: normal;
+  font-family: Poppins;
+  font-weight: 700;
+}
+.create-acc:hover{
+  font-size: 16px;
+}
 .login-container {
   width: 100%;
   display: flex;
