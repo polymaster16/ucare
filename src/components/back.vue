@@ -1,5 +1,6 @@
 <template>
-  <div class="back-container" v-bind:class="rootClassName">
+  <div @click="router.go(-1)"
+   class="back-container" v-bind:class="rootClassName">
     <svg viewBox="0 0 1024 1024" class="back-icon">
       <path
         d="M854 470v84h-520l238 240-60 60-342-342 342-342 60 60-238 240h520z"
@@ -8,13 +9,9 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Back',
-  props: {
-    rootClassName: String,
-  },
-}
+<script setup>
+import { useRouter } from 'vue-router';
+const router = useRouter()
 </script>
 
 <style scoped>

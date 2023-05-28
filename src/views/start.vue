@@ -246,7 +246,8 @@
             </div>
 
             <div v-if="m12" v-for="nanny in nannies" key="nanny.id">
-              <v-lazy v-if="nanny.location === location"
+              <v-lazy @click=" router.push(`/nannies/${nanny.id}`)"
+               v-if="nanny.location === location"
               :width="320"
               :min-height="200"
   :options="{'threshold':0.5}"

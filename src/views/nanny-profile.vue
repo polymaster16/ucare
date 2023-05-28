@@ -74,28 +74,11 @@
   </div>
 </template>
 
-<script>
-import NavbarInteractive from '../components/navbar-interactive.vue'
-import AppBack from '../components/back.vue'
-import AppFooter from '../components/footer.vue'
+<script setup>
+import NavbarInteractive from '@/components/navbar-interactive.vue'
+import AppBack from '@/components/back.vue'
+import AppFooter from '@/components/footer.vue'
 
-export default {
-  name: 'NannyProfile',
-  components: {
-    NavbarInteractive,
-    AppBack,
-    AppFooter,
-  },
-  metaInfo: {
-    title: 'NannyProfile - Dependable Secret Vulture',
-    meta: [
-      {
-        property: 'og:title',
-        content: 'NannyProfile - Dependable Secret Vulture',
-      },
-    ],
-  },
-}
 </script>
 
 <style scoped>

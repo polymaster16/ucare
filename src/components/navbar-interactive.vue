@@ -3,7 +3,14 @@
 </script>
 
 <template>
-   <div class="navbar-interactive-container">
+   <div class="navbar-interactive-container" >
+    <v-menu activator="#menu-activator" >
+      <v-list>
+       <v-list-item><router-link to="/">🏠 Home</router-link> </v-list-item>
+       <v-list-item><router-link to="/start">🔍 Start</router-link> </v-list-item>
+       <v-list-item><router-link to="/login">🔏 Login</router-link> </v-list-item>
+      </v-list>
+    </v-menu>
     <header data-thq="thq-navbar" class="navbar-interactive-navbar-interactive">
       <span class="navbar-interactive-text">
         <span>U.</span>
@@ -25,15 +32,16 @@
           <span class="navbar-interactive-text06"><span>Gallery</span></span>
         </nav>
       </div>
-      <div
+      <div 
         data-thq="thq-navbar-btn-group"
         class="navbar-interactive-btn-group"
       ></div>
-      <div
+      <div 
         data-thq="thq-burger-menu"
         class="navbar-interactive-burger-menu"
       ></div>
-      <svg viewBox="0 0 1024 1024" class="navbar-interactive-icon">
+      <svg id="menu-activator"
+      viewBox="0 0 1024 1024" class="navbar-interactive-icon">
         <path
           d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
         ></path>
