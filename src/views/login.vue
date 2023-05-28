@@ -88,7 +88,8 @@ const login = async() => {
   if(str.value.length > 0 && str2.value.length > 0 ){
     localStorage.setItem('@name', name.value)
     localStorage.setItem('@password', password.value)
-    router.push(`/nannies/${str2.value[0].id}`) 
+    router.push(`/nannies/${str2.value[0].id}`)
+   //router.push('/start') 
     loading.value = false
   } else {
     alert("wrong username or password. Try again please")

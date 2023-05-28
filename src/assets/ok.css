@@ -1,0 +1,211 @@
+.nannies-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.nannies-container1 {
+  width: 100%;
+  height: 1026px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  background-size: cover;
+  justify-content: center;
+  background-image: url('https://post.healthline.com/wp-content/uploads/2020/11/834360-Best-Babysitting-websites-and-Apps-1200x628-Facebook-1200x628.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.nannies-container2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: rgba(0, 0, 0, 0.31);
+}
+.nannies-container3 {
+  flex: 0 0 auto;
+  width: 662px;
+  height: 466px;
+  display: flex;
+  box-shadow: 5px 5px 10px 0px #d4d4d4;
+  margin-top: var(--dl-space-space-twounits);
+  align-items: center;
+  border-radius: var(--dl-radius-radius-radius8);
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #ffffff;
+}
+.nannies-text {
+  font-size: 32px;
+  font-style: normal;
+  margin-top: 0px;
+  font-family: Poppins;
+  font-weight: 700;
+}
+.nannies-text1 {
+  color: #ff4d4f;
+}
+.nannies-text2 {
+  color: #000000;
+}
+.nannies-container4 {
+  flex: 0 0 auto;
+  width: 662px;
+  height: 466px;
+  display: flex;
+  box-shadow: 5px 5px 10px 0px #d4d4d4;
+  margin-top: var(--dl-space-space-twounits);
+  align-items: center;
+  border-radius: var(--dl-radius-radius-radius8);
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #ffffff;
+}
+.nannies-text3 {
+  font-size: 32px;
+  font-style: normal;
+  margin-top: var(--dl-space-space-twounits);
+  font-family: Poppins;
+  font-weight: 700;
+  margin-bottom: var(--dl-space-space-oneandhalfunits);
+}
+.nannies-text5 {
+  color: #ff4d4f;
+}
+.nannies-container5 {
+  width: 371px;
+  height: 127px;
+  display: flex;
+  align-items: center;
+  padding-top: var(--dl-space-space-unit);
+  padding-bottom: 13px;
+  justify-content: center;
+}
+.nannies-image {
+  width: 98px;
+  height: 98px;
+  object-fit: cover;
+  border-color: var(--dl-color-success-500);
+  border-width: 5px;
+  margin-right: 11px;
+  border-radius: var(--dl-radius-radius-round);
+}
+.nannies-container6 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.nannies-text6 {
+  font-size: 24px;
+  align-self: center;
+  font-style: normal;
+  margin-top: var(--dl-space-space-unit);
+  font-family: Poppins;
+  font-weight: 700;
+}
+.nannies-text7 {
+  color: #000000;
+}
+.nannies-text8 {
+  color: #ff4d4f;
+}
+.nannies-container7 {
+  flex: 0 0 auto;
+  width: 111px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nannies-icon {
+  fill: var(--dl-color-success-500);
+  width: 24px;
+  height: 24px;
+  margin-right: var(--dl-space-space-unit);
+}
+.nannies-icon2 {
+  fill: var(--dl-color-success-500);
+  width: 24px;
+  height: 24px;
+  margin-right: var(--dl-space-space-unit);
+}
+.nannies-icon4 {
+  fill: var(--dl-color-success-500);
+  width: 24px;
+  height: 24px;
+  margin-right: 0px;
+}
+@media(max-width: 991px) {
+  .nannies-text {
+    font-size: 32px;
+    font-style: normal;
+    font-family: Poppins;
+    font-weight: 700;
+  }
+  .nannies-text3 {
+    font-size: 32px;
+    font-style: normal;
+    font-family: Poppins;
+    font-weight: 700;
+  }
+}
+@media(max-width: 767px) {
+  .nannies-text {
+    font-size: 32px;
+  }
+  .nannies-text3 {
+    font-size: 32px;
+  }
+}
+@media(max-width: 474px) {
+  .nannies-container3 {
+    width: 413px;
+    height: 490px;
+    margin-bottom: 0px;
+  }
+  .nannies-text {
+    font-size: 32px;
+    font-style: normal;
+    font-family: Poppins;
+    font-weight: 700;
+  }
+  .nannies-container4 {
+    width: 428px;
+    height: 429px;
+    margin-bottom: 0px;
+    padding-right: 0px;
+  }
+  .nannies-text3 {
+    font-size: 32px;
+    font-style: normal;
+    font-family: Poppins;
+    font-weight: 700;
+  }
+  .nannies-image {
+    width: 119px;
+    height: 117px;
+    margin-right: var(--dl-space-space-unit);
+  }
+  .nannies-text6 {
+    font-size: 24px;
+    font-style: normal;
+    font-family: Poppins;
+    font-weight: 700;
+  }
+  .nannies-text7 {
+    color: #000000;
+  }
+  .nannies-text8 {
+    color: #ff4d4f;
+  }
+}

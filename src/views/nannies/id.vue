@@ -5,7 +5,7 @@
       ></navbar-interactive>
       <div class="nanny-profile-container01">
         <div class="nanny-profile-container02">
-          <div class="nanny-profile-container03">
+          <div class="nanny-profile-container03"  >
             <app-back rootClassName="back-root-class-name2"></app-back>
             <div class="nanny-profile-container04">
               <img
@@ -16,6 +16,7 @@
               />
               <span class="nanny-profile-text">
                 <span class="nanny-profile-text01">{{ nanny.name.split(" ")[0] }}</span>
+                &nbsp
                 <span class="nanny-profile-text02">{{ nanny.name.split(" ")[1] }}</span>
               </span>
             </div>
@@ -65,16 +66,16 @@
               </span>
             </div>
             <button v-if="isLoggedIn" 
+            @click="router.push(`${id.params.id}/edit-profile`)"
              class="nanny-profile-find button">
              <span> <v-icon name="fa-pencil-alt"></v-icon></span>
              &nbsp
-            <span>Edit Profile</span> </button>
+            <span>edit profile</span> </button>
 
             <button v-else class="nanny-profile-find button">Recruit Now</button>
-           
-
-          </div>
-        </div>
+          
+          </div>           
+    </div>
       </div>
       <app-footer rootClassName="footer-root-class-name2"></app-footer>
     </div>
@@ -84,10 +85,13 @@
   import NavbarInteractive from '@/components/navbar-interactive.vue'
   import AppBack from '@/components/back.vue'
   import AppFooter from '@/components/footer.vue'
-  import { useRoute } from 'vue-router';
-  import { ref, onMounted } from 'vue';
+  import { useRoute, useRouter } from 'vue-router';
+  import { ref, onMounted, reactive } from 'vue';
 
   const id = useRoute()
+  const router = useRouter()
+
+  const error1 = reactive({message:'', visible:false})
   const nannies = JSON.parse(localStorage.getItem('@nannies')) 
 
   //console.log('nannies: ',nannies)

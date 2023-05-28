@@ -11,34 +11,23 @@
             <div class="start-container4" v-if="m1" v-motion-roll-left>
               <img
                 alt="image"
-                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=ffd5dc&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
+                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Bella&backgroundColor=ffd5dc&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt,blazerAndSweater&clothingGraphic[]&eyebrows=default&eyes=default&facialHair[]&facialHairColor[]&hairColor=2c1b18&hatColor=25557c&mouth=twinkle&skinColor=ae5d29&top=curly,bigHair,bob"
                 class="start-image"
               />
               <span class="start-text">
                 <span>
-                  Hello! Welcome to
+                  Gooday {{ nanny_name }}
                   <span v-html="raw0j7f"></span>
                 </span>
-                <span class="start-text02">U.CARE.</span>
-                <span>How can we help you?</span>
-              </span>
-            </div>
-
-
-            <div @click="{ m1=false; m2=false; m3=false; m11=true; }"
-            class="start-container5" v-if="m2" v-motion-pop> 
-              <span class="start-text04">
-                <span class="start-text05">1.</span>
-                <span> I&apos;m looking for a nanny / house-help 😁 </span>
+               I'm Sarrah and I'll assist you in the validation process of your account
               </span>
             </div>
 
 
             <div  v-on:click="m4=true; m1=false; m2=false; m3=false" 
-             class="start-container6" v-if="m3" v-motion-pop>
+             class="start-container6" v-if="m2" v-motion-pop>
               <span class="start-text07">
-                <span class="start-text08">2.</span>
-                <span> I want to apply as a nanny / house-help 📝</span>
+                <span> Okay 😊</span>
               </span>
             </div>
 
@@ -46,12 +35,11 @@
             <div  class="start-container4" v-if="m4" v-motion-slide-left>
               <img
                 alt="image"
-                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=ffd5dc&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
+                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Bella&backgroundColor=ffd5dc&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt,blazerAndSweater&clothingGraphic[]&eyebrows=default&eyes=default&facialHair[]&facialHairColor[]&hairColor=2c1b18&hatColor=25557c&mouth=twinkle&skinColor=ae5d29&top=curly,bigHair,bob"
                 class="start-image"
               />
               <span class="start-text">
-             In other to apply as a nanny, you'll have
-              to fill the short form below.
+             In other to validate your account, provide us with more infos about you
                  
               </span>
             </div>
@@ -59,25 +47,18 @@
             <div
             class="start-container40" v-if="m4" v-slide-left> 
             <div>
-    <v-text-field
+    <v-select
     variant="outlined"
-      v-model="name"
-      label="Name"
-    ></v-text-field>
+      v-model="location"
+      label="Location"
+      :items="['Yaounde', 'Douala', 'Bertoua', 'Ebolowa', 'Bafoussam', 'Bamenda', 'Buea']"
+    ></v-select>
 
-    <v-text-field
+    <v-textarea
     variant="outlined"
-      v-model="phone"
-      type="number"
-      label="Phone Number"
-    ></v-text-field>
-    <v-text-field
-    variant="outlined"
-      v-model="dob"
-      type="date"
-      label="Date of birth"
-    ></v-text-field>
-
+      v-model="bio"
+      label="More about you"
+    ></v-textarea>
 
 <div class="errorClass" v-if="error1.visible">
   {{ error1.message }}
@@ -95,11 +76,11 @@
      <div  class="start-container4" v-if="m5" v-motion-slide-left>
               <img
                 alt="image"
-                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=ffd5dc&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
+                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Bella&backgroundColor=ffd5dc&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt,blazerAndSweater&clothingGraphic[]&eyebrows=default&eyes=default&facialHair[]&facialHairColor[]&hairColor=2c1b18&hatColor=25557c&mouth=twinkle&skinColor=ae5d29&top=curly,bigHair,bob"
                 class="start-image"
               />
               <span class="start-text">
-             Now, setup a password for your account.
+             Now, provide us with front and back photos of your ID
                  
               </span>
             </div>
@@ -109,21 +90,29 @@
             <div
             class="start-container40" v-if="m6" v-motion-slide-left> 
 <div>
-            <v-text-field
-            width="100"
-    variant="outlined"
-      v-model="password1"
-      type="password"
-      label="Enter a password"
-    ></v-text-field>
+    <div>
+    <v-icon name="bi-card-image"></v-icon>
+    <v-text>
+        Front of ID Card
+    </v-text>
+</div>
+    <br>
 
-    <v-text-field
-    variant="outlined"
-      v-model="password2"
-      type="password"
-      label="Enter a password"
-    ></v-text-field>
-           
+    <van-uploader :max-count="1"
+     v-model="preview1"/>
+    <br>
+
+    <div>
+    <v-icon name="bi-card-image"></v-icon>
+    <v-text>
+        Back of ID Card
+    </v-text>
+</div>
+    <br>
+    <van-uploader :max-count="1"
+     v-model="preview2" />
+    <br>
+  
 <div class="errorClass" v-if="error2.visible">
   {{ error2.message }}
 </div>
@@ -141,28 +130,78 @@
      <div  class="start-container4" v-if="m7" v-motion-slide-left>
               <img
                 alt="image"
-                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=ffd5dc&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
+                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Bella&backgroundColor=ffd5dc&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt,blazerAndSweater&clothingGraphic[]&eyebrows=default&eyes=default&facialHair[]&facialHairColor[]&hairColor=2c1b18&hatColor=25557c&mouth=twinkle&skinColor=ae5d29&top=curly,bigHair,bob"
                 class="start-image"
               />
               <span class="start-text">
-             We're almost done. Just check the box below and you're good to go!
+            Now, snap a beutiful picture of yourself and upload. It will serve as your profile picture
                  
               </span>
             </div>
 
-
-
             <div
             class="start-container40" v-if="m8" v-slide-left> 
 <div>
-  <v-switch v-model="checked"
-  color="red-lighten-1" label="I agree to all the terms and blablabla"></v-switch>
+  <div>
+    <v-icon name="bi-card-image"></v-icon>
+    <v-text>
+       Your pic
+    </v-text>
+</div>
+    <br> 
+    <van-uploader :max-count="1"
+     v-model="preview3" />
+    <br>
            
 <div class="errorClass" v-if="error3.visible">
   {{ error3.message }}
 </div>
 
 <van-button :loading="loading" @click="validateForm3" class="login-find button">
+              <span>
+                <span class="login-text09">Continue</span>
+                <br />
+              </span>
+            </van-button>
+          </div>
+
+     </div>
+
+     <div  class="start-container4" v-if="m11" v-motion-slide-left>
+              <img
+                alt="image"
+                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Bella&backgroundColor=ffd5dc&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt,blazerAndSweater&clothingGraphic[]&eyebrows=default&eyes=default&facialHair[]&facialHairColor[]&hairColor=2c1b18&hatColor=25557c&mouth=twinkle&skinColor=ae5d29&top=curly,bigHair,bob"
+                class="start-image"
+              />
+              <span class="start-text">
+           We're almost done, now provide us with a pdf copy of you CV/ Resume 
+                 
+              </span>
+            </div>
+
+            <div
+            class="start-container40" v-if="m11" v-slide-left> 
+<div>
+  <div>
+    <v-icon name="bi-card-image"></v-icon>
+    <v-text>
+       Your Resume
+    </v-text>
+</div>
+    <br> 
+    <van-uploader :max-count="1"
+     v-model="preview4" />
+    <br>
+
+      <v-switch v-model="checked"
+  color="red-lighten-1" label="I agree to all the terms and blablabla"></v-switch>
+
+           
+<div class="errorClass" v-if="error3.visible">
+  {{ error3.message }}
+</div>
+
+<van-button :loading="loading" @click="validateForm4" class="login-find button">
               <span>
                 <span class="login-text09">Confirm</span>
                 <br />
@@ -171,8 +210,6 @@
           </div>
 
      </div>
-
-
      
 
 
@@ -180,103 +217,25 @@
      <div class="start-container4" v-if="m9" v-motion-slide-left>
               <img
                 alt="image"
-                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=ffd5dc&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
+                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Bella&backgroundColor=ffd5dc&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt,blazerAndSweater&clothingGraphic[]&eyebrows=default&eyes=default&facialHair[]&facialHairColor[]&hairColor=2c1b18&hatColor=25557c&mouth=twinkle&skinColor=ae5d29&top=curly,bigHair,bob"
                 class="start-image"
               />
               <span class="start-text">
-              Congrats, your account have been created successfully
+              Congrats, your account have been validated
               </span>
             </div>
 
 
-            <div @click="router.push('/login')"
+            <div @click="router.go(-1)"
             class="start-container5" v-if="m10"  v-motion-slide-left> 
               <span class="start-text04">
                 <span class="start-text05">1.</span>
-                <span> Login into my account 🔓 </span>
+                <span> Go to my profile 😀</span>
               </span>
             </div>
 
 
-            <div  class="start-container4" v-if="m11" v-motion-slide-left>
-              <img
-                alt="image"
-                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Bella&backgroundColor=ffd5dc&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt,blazerAndSweater&clothingGraphic[]&eyebrows=default&eyes=default&facialHair[]&facialHairColor[]&hairColor=2c1b18&hatColor=25557c&mouth=twinkle&skinColor=ae5d29&top=curly,bigHair,bob"
-                class="start-image"
-              />
-              <span class="start-text">
-             To begin, select your current location
-                 
-              </span>
-            </div>
 
-            <div
-            class="start-container40" v-if="m11" v-slide-left> 
-            <div>
-    <v-select
-    variant="outlined"
-      v-model="location"
-      label="Location"
-      :items="['All Locations','Yaounde', 'Douala', 'Bertoua', 'Ebolowa', 'Bafoussam', 'Bamenda', 'Buea']"
-    ></v-select>
-
-<div class="errorClass" v-if="error1.visible">
-  {{ error1.message }}
-</div>
-
-<button @click="validateLocation" class="login-find button">
-              <span>
-                <span class="login-text09">Next</span>
-                <br />
-              </span>
-            </button>
-     </div>
-    </div>
-
-    <div  class="start-container4" v-if="m12" v-motion-slide-left>
-              <img
-                alt="image"
-                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Bella&backgroundColor=ffd5dc&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt,blazerAndSweater&clothingGraphic[]&eyebrows=default&eyes=default&facialHair[]&facialHairColor[]&hairColor=2c1b18&hatColor=25557c&mouth=twinkle&skinColor=ae5d29&top=curly,bigHair,bob"
-                class="start-image"
-              />
-              <span class="start-text">
-             Here is a list of available nannies in {{ location }}
-                 
-              </span>
-            </div>
-
-            <div v-if="m12" v-for="nanny in nannies" key="nanny.id">
-              <v-lazy v-if="nanny.location === location"
-              :width="320"
-              :min-height="200"
-  :options="{'threshold':0.5}"
-  transition="fade-transition"
-              >
-              <div class="start-container07">
-            <img
-              :src="nanny.avatar"
-              loading="lazy"
-              class="start-image1"
-            />
-            <div class="start-container08">
-              <span class="start-text10">
-                <span class="start-text11">{{ nanny.name.split(" ")[0] }} </span>
-                &nbsp
-                <span class="start-text12">{{ nanny.name.split(" ")[1] }} </span>
-              </span>
-              <div class="start-container09">
-                <svg viewBox="0 0 1024 1024" class="start-icon">
-                  <path
-                    d="M512 490q44 0 75-31t31-75-31-75-75-31-75 31-31 75 31 75 75 31zM512 86q124 0 211 87t87 211q0 62-31 142t-75 150-87 131-73 97l-32 34q-12-14-32-37t-72-92-91-134-71-147-32-144q0-124 87-211t211-87z"
-                  ></path>
-                </svg>
-                <span class="start-text13">{{ nanny.location }}</span>
-              </div>
-            </div>
-          </div>
-
-            </v-lazy>
-            </div>
           </div>
 
 
@@ -287,9 +246,9 @@
   </template>
   
   <script setup>
-  import NavbarInteractive from '../components/navbar-interactive.vue'
+  import NavbarInteractive from '@/components/navbar-interactive.vue'
   import { ref, onMounted, reactive } from 'vue';
-  import {database} from '../supabase.js';
+  import {database} from '@/supabase.js';
   import { useRouter } from 'vue-router';
 
 const router = useRouter()
@@ -304,46 +263,76 @@ const router = useRouter()
     const m8 = ref(false)
     const m9 = ref(false)
     const m10 = ref(false)
-
     const m11 = ref(false)
     const m12 = ref(false)
 
+    const nanny_name = localStorage.getItem('@name')
 
 
 
+    const showKeyboard = ref(false);
 
-    const nannies = JSON.parse( localStorage.getItem('@nannies'))
-    console.log('Nannies in start',nannies)
     const loading=ref(false)
 
-   const minDate = new Date(1965, 1, 1)
-   const maxDate = new Date(2005, 1, 1)
-const name= ref('')
-const phone= ref('')
+const location= ref('--select location--')
+const bio= ref('')
 
-const password1= ref('')
-const password2= ref('')
+const frontID= ref('')
+const backID= ref('')
+
+const preview1 = ref([])
+const preview2 = ref([])
+const preview3 = ref([])
+const preview4 = ref([])
+
+
+const afterRead1 = (file) => {
+      frontID.value=file
+      preview.value[0].url = file.content
+      console.log(file)
+    };
+    const afterRead2 = (file) => {
+      backID.value=file
+    };
 
 const dob = ref(new Date())
-const checked= ref()
+const checked= ref(false)
   
     const error1 =  reactive({message:"", visible:false})
     const error2 =  reactive({message:"", visible:false})
     const error3 =  reactive({message:"", visible:false})
 
+const link = ref('')
+    const upload = async(e) => {
+  loading.value = true;
+  try {
+await database
+  .storage
+  .from('accordance-teachings')
+  .upload(`tes2/${preview3.value[0].file.name}`, preview3.value[0].file, {
+  cacheControl: '5000000',
+  upsert: false
+  })
+link.value = `https://pwuhngcxepwfvynqirsc.supabase.co/storage/v1/object/public/accordance-teachings/tes2/${preview3.value[0].file.name}`
+//window.open(link.value);
+loading.value = false
+  } catch (error) {
+    console.log(error.message)
+    loading.value = false
+
+  }
+}
+
 
     const validateForm1 =()=>{
-      if(name.value === ''){
+      if(location.value === '--select location--')
+      {
         error1.visible = true;
-      error1.message = "Name cannot be empty";
+      error1.message = "Location  cannot be empty";
       } else
-     if(phone.value.length !=9){
-      error1.visible = true;
-      error1.message = "Enter a valid phone number";
-     } else
-     if(dob.value === ""){
+     if(bio.value === ""){
         error1.visible = true;
-      error1.message = "Date of birth cannot be empty";
+      error1.message = "Bio cannot be empty";
       }
       else{
         error1.visible = false;
@@ -360,13 +349,13 @@ const checked= ref()
     }
 
     const validateForm2 =()=>{
-      if(password1.value === "") {
+      if(preview1.value.length === 0) {
         error2.visible = true;
-      error2.message = "Come on, setup a password...";
+      error2.message = "Come on, provide us with a picture of the front of your ID Card...";
     } else
-      if(password1.value != password2.value) {
+      if(preview2.value.length === 0) {
         error2.visible = true;
-      error2.message = "Passwords do not match";
+      error2.message = "provide us with a picture of the back of your ID Card..";
     }
     else{
       error2.visible = false;
@@ -380,10 +369,52 @@ const checked= ref()
     }
   }
 
-  const validateForm3 = async()=>{
+  
+  const validateForm3 =async()=>{
+    loading.value=true
+      if(preview3.value.length === 0) {
+        error3.visible = true;
+      error3.message = "Come on, provide us with a picture of yourself";
+    } else
+      if(preview2.value.length === 0) {
+        error2.visible = true;
+      error2.message = "provide us with a picture of the back of your ID Card..";
+    }
+    else{
+
+    try {
+await database
+  .storage
+  .from('accordance-teachings')
+  .upload(`tes2/${preview3.value[0].file.name}`, preview3.value[0].file, {
+  cacheControl: '5000000',
+  upsert: false
+  })
+link.value = `https://pwuhngcxepwfvynqirsc.supabase.co/storage/v1/object/public/accordance-teachings/tes2/${preview3.value[0].file.name}`
+//window.open(link.value);
+   loading.value = false
+     error3.visible = false;
+      m7.value = false
+       m8.value = false  
+      m11.value = true
+  } catch (error) {
+    console.log(error.message)
+    loading.value = false
+
+  }
+     
+
+    }
+  }
+
+  const validateForm4 = async()=>{
+    if(preview4.value.length === 0) {
+        error3.visible = true;
+      error3.message = "You need to provide us with your CV in other to continue";
+    } else
     if(!checked.value){
       error3.visible = true
-      error3.message = "You must agree in other to proceed"
+      error3.message = "You need to agree with the terms in other to continue"
     }
     else{
       error3.visible = false
@@ -393,23 +424,17 @@ const checked= ref()
         loading.value = true;
        await database
        .from('nannies')
-     .insert({
-       name: name.value,
-      phone: phone.value,
-      dob: dob.value,
-      password: password1.value,
-     avatar: 'https://www.nicepng.com/png/detail/52-521023_download-free-icon-female-vectors-blank-facebook-profile.png',
-     bio:'',
-      location:"Not set",
+     .update({
+     avatar: link.value,
+     bio: bio.value,
+      location: location.value,
       validated: true,
     })
-      m7.value = false
-      m8.value = false
+    .eq('name', nanny_name)
+
+    m11.value = false
       m9.value = true
       m10.value = true
-
-      localStorage.setItem('@name', name.value)
-      localStorage.setItem('@password', password1.value)
       loading.value = false;
 
 
@@ -419,25 +444,7 @@ const checked= ref()
 
     }
   } 
-
-  const location = ref('--select location--')
-
-  function validateLocation(){
-if(location.value === '--select location--'){
-  error1.visible = true
-      error1.message = 'select a location sir,'
-    }
-    else{
-      error1.visible = false
-      loading.value = true;
-      m11.value = false
-      m12.value = true
-}
-
-}
-
-
-  onMounted(() => {
+    onMounted(() => {
       
         setTimeout(() => {
             m1.value = true;
@@ -662,72 +669,6 @@ background: linear-gradient(90deg, rgba(167,198,251,1) 0%, rgba(217,131,163,1) 1
   .login-text09 {
     width: 137px;
   }
-}
-
-
-.start-container07 {
-  width: 100%;
-  height: 127px;
-  display: flex;
-  transition: 0.3s;
-  align-items: center;
-  padding-top: var(--dl-space-space-unit);
-  padding-left: 5%;
-  padding-right: 5%;
-  border-radius: 22px;
-  padding-bottom: 13px;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.73);
-}
-.start-container07:hover {
-  height: 147px;
-}
-.start-image1 {
-  width: 98px;
-  height: 98px;
-  object-fit: cover;
-  border-color: #ff4d4f;
-  border-width: 5px;
-  margin-right: 11px;
-  border-radius: var(--dl-radius-radius-round);
-}
-.start-container08 {
-  flex: 0 0 auto;
-  width: auto;
-  height: auto;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.start-text10 {
-  font-size: 24px;
-  align-self: center;
-  font-style: normal;
-  margin-top: var(--dl-space-space-unit);
-  font-family: Poppins;
-  font-weight: 700;
-}
-.start-text11 {
-  color: #000000;
-}
-.start-text12 {
-  color: #ff4d4f;
-}
-.start-container09 {
-  flex: 0 0 auto;
-  width: 111px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.start-icon {
-  width: 23px;
-  height: 20px;
-}
-.start-text13 {
-  font-style: normal;
-  font-weight: 700;
 }
 @media(max-width: 474px) {
  

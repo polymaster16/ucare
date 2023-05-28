@@ -21,10 +21,10 @@ import * as directives from 'vuetify/directives'
 
 
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { FaPencilAlt } from "oh-vue-icons/icons";
+import { FaPencilAlt, BiCardImage } from "oh-vue-icons/icons";
 import { FaFlag, RiZhihuFill } from "oh-vue-icons/icons";
 
-addIcons(FaFlag, RiZhihuFill, FaPencilAlt);
+addIcons(FaFlag, RiZhihuFill, FaPencilAlt,BiCardImage);
 
 const vuetify = createVuetify({
   components,
