@@ -7,57 +7,91 @@
         <div class="nanny-profile-container02">
           <div class="nanny-profile-container03"  >
             <app-back rootClassName="back-root-class-name2"></app-back>
-            <div class="nanny-profile-container04">
+            <div  v-if="!reviewVisible" class="nanny-profile-container04">
               <img
                 alt="image"
                 :src="nanny.avatar"
                 loading="lazy"
                 class="nanny-profile-image"
               />
-              <span class="nanny-profile-text">
+              <span  v-if="!reviewVisible" class="nanny-profile-text">
                 <span class="nanny-profile-text01">{{ nanny.name.split(" ")[0] }}</span>
                 &nbsp
                 <span class="nanny-profile-text02">{{ nanny.name.split(" ")[1] }}</span>
               </span>
             </div>
-            <div class="nanny-profile-container05">
+            <div  v-if="!reviewVisible" class="nanny-profile-container05">
               <span class="nanny-profile-text03">
                 <span class="nanny-profile-text04">- Age:</span>
                 <span class="nanny-profile-text05">  {{ age }}</span>
               </span>
             </div>
-            <div class="nanny-profile-container06">
+            <div  v-if="!reviewVisible" class="nanny-profile-container06">
               <span class="nanny-profile-text06">
                 <span class="nanny-profile-text07">- Phone:</span>
                 <span class="nanny-profile-text08">  +237 {{ nanny.phone }}</span>
               </span>
             </div>
-            <div class="nanny-profile-container07">
+            <div  v-if="!reviewVisible" class="nanny-profile-container07">
               <span class="nanny-profile-text09">
                 <span class="nanny-profile-text10">- Location:</span>
                 <span class="nanny-profile-text11"> </span>
                 <span class="nanny-profile-text12">{{ nanny.location }}</span>
               </span>
             </div>
-            <span class="nanny-profile-text13">
+            <span  v-if="!reviewVisible" class="nanny-profile-text13">
               <span class="nanny-profile-text14">About </span>
               <span class="nanny-profile-text15">me </span>
             </span>
-            <span class="nanny-profile-text16">
+            <span v-if="!reviewVisible" class="nanny-profile-text16">
             {{ nanny.bio }}
             </span>
-            <span class="nanny-profile-text17">
+            <span @click="toggleReview()" class="nanny-profile-text17">
               <span>Re</span>
               <span class="nanny-profile-text19">vi</span>
               <span>ews</span>
             </span>
-            <div class="nanny-profile-container08" v-if="false">
-              <span class="nanny-profile-text21">@Mrs Sharon Dinkeng</span>
+<div v-if="reviewVisible" v-for="review in reviews" :key="review.id">
+            <div class="nanny-profile-container08" v-if="true">
+              <span class="nanny-profile-text21">@{{ review.name }}</span>
               <span class="nanny-profile-text22">
-                She is very respectful and efficient. She did all her chores without
-                me having to control anything
+               {{ review.message }}
               </span>
             </div>
+          </div>
+
+          <div
+            class="start-container40" v-if="reviewVisible" v-slide-left> 
+            <div>
+    <v-text-field
+    variant="outlined"
+      v-model="clientName"
+      label="Your Name"
+    ></v-text-field>
+<br>
+    <v-textarea
+    variant="outlined"
+      v-model="msg"
+      label="Your Review"
+    ></v-textarea>
+
+
+<div class="errorClass" v-if="error1.visible">
+  {{ error1.message }}
+</div>
+
+<v-btn :loading="loading" color="blue-lighten-1" @click="validateForm1" class="login-find button">
+              <span>
+                <span class="login-text09">Submit</span>
+                <br />
+              </span>
+            </v-btn>
+     </div>
+    </div>
+
+          
+
+
             <div class="nanny-profile-container09" v-if="false">
               <span class="nanny-profile-text23">@Mrs Sharon Dinkeng</span>
               <span class="nanny-profile-text24">
@@ -90,6 +124,7 @@
   import AppFooter from '@/components/footer.vue'
   import { useRoute, useRouter } from 'vue-router';
   import { ref, onMounted, reactive } from 'vue';
+  import { database } from '../../supabase';
 
   const id = useRoute()
   const router = useRouter()
@@ -97,6 +132,39 @@
   const error1 = reactive({message:'', visible:false})
   const nannies = JSON.parse(localStorage.getItem('@nannies')) 
 
+  const clientName = ref('')
+  const msg = ref('')
+  const loading=ref(false)
+
+   async function validateForm1(){
+    if(clientName.value === '')
+    {
+      error1.message='name cannot be empty'
+      error1.visible = true      
+    }
+    else
+    if(msg.value === ''){
+      error1.message='message cannot be empty'
+      error1.visible = true     
+    }
+    else {
+      try {
+        loading.value= true
+        await database
+        .from('comments2')
+        .insert({
+          name: clientName.value,
+          message: msg.value,
+          nannyId: id.params.id,
+        })
+        getReviews();
+        loading.value = false
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+  }
   //console.log('nannies: ',nannies)
 
   const nanny = nannies.filter(n => n.id == id.params.id)[0]
@@ -111,7 +179,29 @@
 
   const isLoggedIn = ref(false)
 
+  const reviewVisible = ref(false)
+  function toggleReview (){
+    reviewVisible.value = !reviewVisible.value
+  }
+
+  const reviews = ref()
+
+  async function getReviews(){
+try {
+  const {data} = await database
+  .from('comments2')
+  .select('*')
+  .eq('nannyId', id.params.id)
+  
+  reviews.value = data
+
+} catch (error) {
+  
+}
+  }
+
   onMounted(() => {
+    getReviews();
     if((loggedName === nanny.name)&&(loggedPassword === nanny.password)) {
       isLoggedIn.value = true
     }
@@ -128,6 +218,15 @@
     align-items: center;
     flex-direction: column;
     justify-content: flex-start;
+  }
+  
+  .start-container40 {
+    width: 100%;
+    height: auto;
+   padding: 3vw;
+    border-radius: 24px;
+    margin-bottom: var(--dl-space-space-oneandhalfunits);
+    background-color: #ffffff;
   }
   .nanny-profile-container01 {
     width: 100%;
