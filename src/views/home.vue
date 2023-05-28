@@ -1,5 +1,5 @@
 <template>
-  <div class="home-container">
+  <div class="home-container" v-motion-fade >
     <navbar-interactive
       rootClassName="navbar-interactive-root-class-name"
     ></navbar-interactive>

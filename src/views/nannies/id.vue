@@ -1,5 +1,5 @@
 <template>
-    <div class="nanny-profile-container">
+    <div class="nanny-profile-container" v-motion-fade >
       <navbar-interactive
         rootClassName="navbar-interactive-root-class-name2"
       ></navbar-interactive>
@@ -72,7 +72,10 @@
              &nbsp
             <span>edit profile</span> </button>
 
-            <button v-else class="nanny-profile-find button">Recruit Now</button>
+            <button
+            @click="router.push(`${id.params.id}/recruit`)"
+
+             v-else class="nanny-profile-find button">Recruit Now</button>
           
           </div>           
     </div>

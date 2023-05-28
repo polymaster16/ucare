@@ -1,5 +1,5 @@
 <template>
-  <div class="solux-pay-container">
+  <div class="solux-pay-container" v-motion-fade>
     <span class="solux-pay-text">Payment Successful</span>
     <div class="solux-pay-container1">
       <img

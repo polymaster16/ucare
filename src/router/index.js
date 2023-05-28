@@ -57,6 +57,16 @@ const router = createRouter({
       path: '/nannies/:id/edit-profile',
       component: ()=> import('../views/nannies/edit-profile.vue'),
     },
+     {
+      name: 'recruit',
+      path: '/nannies/:id/recruit',
+      component: ()=> import('../views/nannies/recruit.vue'),
+    },
+    {
+      name: 'success',
+      path: '/success',
+      component: ()=> import('../views/nannies/success.vue'),
+    },
   ]
 })
 

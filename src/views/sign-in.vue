@@ -1,5 +1,5 @@
 <template>
-  <div class="sign-in-container">
+  <div class="sign-in-container" v-motion-fade>
     <navbar-interactive></navbar-interactive>
     <div class="sign-in-container1">
       <div class="sign-in-container2">
