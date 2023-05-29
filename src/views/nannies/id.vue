@@ -226,7 +226,8 @@ try {
     height: auto;
    padding: 3vw;
     border-radius: 24px;
-    margin-bottom: var(--dl-space-space-oneandhalfunits);
+    margin-top:  var(--dl-space-space-oneandhalfunits) ;
+    margin-bottom: var(--dl-space-space-twounits);
     background-color: #ffffff;
   }
   .nanny-profile-container01 {

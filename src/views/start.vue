@@ -249,7 +249,7 @@
               <v-lazy @click=" router.push(`/nannies/${nanny.id}`)"
                v-if="nanny.location === location"
               :width="320"
-              :min-height="200"
+              :min-height="150"
   :options="{'threshold':0.5}"
   transition="fade-transition"
               >
