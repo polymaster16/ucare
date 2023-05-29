@@ -248,7 +248,7 @@ const router = useRouter()
     const m11 = ref(false)
     const m12 = ref(false)
 
-    const nanny_name = localStorage.getItem('@name')
+    const nanny_name = localStorage.getItem('@selectedNanny')
 
 
 

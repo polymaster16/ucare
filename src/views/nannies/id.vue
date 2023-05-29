@@ -201,6 +201,7 @@ try {
   }
 
   onMounted(() => {
+    localStorage.setItem('@selectedNanny', nanny.name)
     getReviews();
     if((loggedName === nanny.name)&&(loggedPassword === nanny.password)) {
       isLoggedIn.value = true
