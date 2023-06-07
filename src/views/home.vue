@@ -7,7 +7,7 @@
       <div class="home-container02">
         <div class="home-container03">
           <span class="home-text">
-            Find the perfect nanny for your household Today
+            Find your perfect hairdesser today!
           </span>
           <div class="home-container04">
             <button @click="router.push('/start')" class="home-find button">Start Now</button>
@@ -202,7 +202,7 @@ export default {
   align-items: flex-start;
   background-size: cover;
   justify-content: center;
-  background-image: url('https://post.healthline.com/wp-content/uploads/2020/11/834360-Best-Babysitting-websites-and-Apps-1200x628-Facebook-1200x628.jpg');
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c0/Salon_Shop.jpg');
   background-position: center;
 }
 .home-container02 {
@@ -252,7 +252,7 @@ export default {
   border-radius: 56px;
   padding-right: var(--dl-space-space-oneandhalfunits);
   padding-bottom: var(--dl-space-space-unit);
-  background-color: rgb(255, 77, 79);
+  background-color: rgb(152, 0, 217);
 }
 .home-find:hover {
   opacity: 0.5;
@@ -278,7 +278,8 @@ export default {
   color: var(--dl-color-gray-black);
 }
 .home-text04 {
-  color: #ff4d4f;
+  color:rgb(152, 0, 217);
+;
 }
 .home-container06 {
   width: 100%;
@@ -318,7 +319,8 @@ export default {
   justify-content: center;
 }
 .home-text05 {
-  color: rgb(255, 77, 79);
+  color:  rgb(152, 0, 217);
+
   font-size: 18px;
   font-style: normal;
   font-family: Poppins;
@@ -356,7 +358,7 @@ export default {
   justify-content: center;
 }
 .home-text10 {
-  color: rgb(255, 77, 79);
+  color: rgb(152, 0, 217);
   font-style: normal;
   font-family: Poppins;
   font-weight: 600;
@@ -399,7 +401,7 @@ export default {
   justify-content: center;
 }
 .home-text16 {
-  color: rgb(255, 77, 79);
+  color: rgb(152, 0, 217);
   font-style: normal;
   font-family: Poppins;
   font-weight: 600;
@@ -434,7 +436,7 @@ export default {
   color: #000000;
 }
 .home-text25 {
-  color: #ff4d4f;
+ color: rgb(152, 0, 217);
 }
 .home-container14 {
   width: 100%;
@@ -510,7 +512,7 @@ export default {
   height: var(--dl-size-size-medium);
 }
 .home-text28 {
-  color: #ff4d4f;
+ color: rgb(152, 0, 217);
   font-size: 18px;
   font-style: normal;
   margin-top: var(--dl-space-space-halfunit);
@@ -557,13 +559,13 @@ export default {
   text-transform: capitalize;
 }
 .home-text32 {
-  color: #ff4d4f;
+ color: rgb(152, 0, 217);
 }
 .home-text33 {
   color: #4c4c4c;
 }
 .home-text34 {
-  color: #ff4d4f;
+  color: rgb(152, 0, 217);
 }
 .home-container21 {
   width: 100%;

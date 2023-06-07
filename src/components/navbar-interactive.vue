@@ -13,8 +13,8 @@
     </v-menu>
     <header data-thq="thq-navbar" class="navbar-interactive-navbar-interactive">
       <span class="navbar-interactive-text">
-        <span>U.</span>
-        <span class="navbar-interactive-text02">Care</span>
+        <span>E.</span>
+        <span class="navbar-interactive-text02">hair</span>
       </span>
       <div
         data-thq="thq-navbar-nav"
@@ -153,7 +153,7 @@
   flex-direction: row;
 }
 .navbar-interactive-text03 {
-  color: #ff4d4f;
+  color: rgb(152, 0, 217);
   font-size: 20px;
   font-style: normal;
   text-align: left;
@@ -170,7 +170,7 @@
   margin-bottom: var(--dl-space-space-unit);
 }
 .navbar-interactive-text04 {
-  color: rgb(255, 77, 79);
+  color: rgb(152, 0, 217);
   font-size: 18px;
   font-style: normal;
   text-align: left;
@@ -187,7 +187,7 @@
   margin-bottom: var(--dl-space-space-unit);
 }
 .navbar-interactive-text05 {
-  color: #ff4d4f;
+  color: rgb(152, 0, 217);
   font-size: 18px;
   font-style: normal;
   text-align: left;
@@ -204,7 +204,7 @@
   margin-bottom: var(--dl-space-space-unit);
 }
 .navbar-interactive-text06 {
-  color: rgb(255, 77, 79);
+  color: rgb(152, 0, 217);
   font-size: 18px;
   font-style: normal;
   text-align: left;

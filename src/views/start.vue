@@ -11,7 +11,7 @@
             <div class="start-container4" v-if="m1" v-motion-roll-left>
               <img
                 alt="image"
-                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=ffd5dc&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
+                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=fbd9ff&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
                 class="start-image"
               />
               <span class="start-text">
@@ -19,7 +19,7 @@
                   Hello! Welcome to
                   <span v-html="raw0j7f"></span>
                 </span>
-                <span class="start-text02">U.CARE.</span>
+                <span class="start-text02">E.Hair.</span>
                 <span>How can we help you?</span>
               </span>
             </div>
@@ -29,7 +29,7 @@
             class="start-container5" v-if="m2" v-motion-pop> 
               <span class="start-text04">
                 <span class="start-text05">1.</span>
-                <span> I&apos;m looking for a nanny / house-help 😁 </span>
+                <span> I&apos;m looking for a hair dresser 😁 </span>
               </span>
             </div>
 
@@ -38,7 +38,7 @@
              class="start-container6" v-if="m3" v-motion-pop>
               <span class="start-text07">
                 <span class="start-text08">2.</span>
-                <span> I want to apply as a nanny / house-help 📝</span>
+                <span> I want to apply as a hair dresser 📝</span>
               </span>
             </div>
 
@@ -46,7 +46,7 @@
             <div  class="start-container4" v-if="m4" v-motion-slide-left>
               <img
                 alt="image"
-                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=ffd5dc&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
+                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=fbd9ff&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
                 class="start-image"
               />
               <span class="start-text">
@@ -95,7 +95,7 @@
      <div  class="start-container4" v-if="m5" v-motion-slide-left>
               <img
                 alt="image"
-                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=ffd5dc&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
+                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=fbd9ff&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
                 class="start-image"
               />
               <span class="start-text">
@@ -141,7 +141,7 @@
      <div  class="start-container4" v-if="m7" v-motion-slide-left>
               <img
                 alt="image"
-                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=ffd5dc&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
+                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=fbd9ff&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
                 class="start-image"
               />
               <span class="start-text">
@@ -180,7 +180,7 @@
      <div class="start-container4" v-if="m9" v-motion-slide-left>
               <img
                 alt="image"
-                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=ffd5dc&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
+                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Snowballggggggggggg&backgroundColor=fbd9ff&backgroundType=solid,gradientLinear&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt&clothingGraphic[]&eyebrows=default&eyes=default&facialHair=beardMedium&facialHairColor=2c1b18&facialHairProbability=100&hairColor=2c1b18&mouth=default&skinColor=ae5d29&top=dreads01,theCaesar,hat"
                 class="start-image"
               />
               <span class="start-text">
@@ -201,7 +201,7 @@
             <div  class="start-container4" v-if="m11" v-motion-slide-left>
               <img
                 alt="image"
-                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Bella&backgroundColor=ffd5dc&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt,blazerAndSweater&clothingGraphic[]&eyebrows=default&eyes=default&facialHair[]&facialHairColor[]&hairColor=2c1b18&hatColor=25557c&mouth=twinkle&skinColor=ae5d29&top=curly,bigHair,bob"
+                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Bella&backgroundColor=fbd9ff&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt,blazerAndSweater&clothingGraphic[]&eyebrows=default&eyes=default&facialHair[]&facialHairColor[]&hairColor=2c1b18&hatColor=25557c&mouth=twinkle&skinColor=ae5d29&top=curly,bigHair,bob"
                 class="start-image"
               />
               <span class="start-text">
@@ -236,11 +236,11 @@
     <div  class="start-container4" v-if="m12" v-motion-slide-left>
               <img
                 alt="image"
-                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Bella&backgroundColor=ffd5dc&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt,blazerAndSweater&clothingGraphic[]&eyebrows=default&eyes=default&facialHair[]&facialHairColor[]&hairColor=2c1b18&hatColor=25557c&mouth=twinkle&skinColor=ae5d29&top=curly,bigHair,bob"
+                src="https://api.dicebear.com/6.x/avataaars/svg?seed=Bella&backgroundColor=fbd9ff&accessories[]&accessoriesColor[]&clothesColor=262e33,25557c&clothing=blazerAndShirt,blazerAndSweater&clothingGraphic[]&eyebrows=default&eyes=default&facialHair[]&facialHairColor[]&hairColor=2c1b18&hatColor=25557c&mouth=twinkle&skinColor=ae5d29&top=curly,bigHair,bob"
                 class="start-image"
               />
               <span class="start-text">
-             Here is a list of available nannies in {{ location }}
+             Here is a list of available hair dressers in {{ location }}
                  
               </span>
             </div>
@@ -480,7 +480,7 @@ background: linear-gradient(90deg, rgba(167,198,251,1) 0%, rgba(217,131,163,1) 1
     flex-direction: column;
     background-size: cover;
     justify-content: flex-start;
-    background-image: url('https://post.healthline.com/wp-content/uploads/2020/11/834360-Best-Babysitting-websites-and-Apps-1200x628-Facebook-1200x628.jpg');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c0/Salon_Shop.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -623,7 +623,7 @@ background: linear-gradient(90deg, rgba(167,198,251,1) 0%, rgba(217,131,163,1) 1
   border-radius: 56px;
   padding-right: var(--dl-space-space-oneandhalfunits);
   padding-bottom: var(--dl-space-space-unit);
-  background-color: rgb(255, 77, 79);
+  background-color: #bf00d4;
 }
 .login-find:hover {
   opacity: 0.5;
@@ -712,7 +712,7 @@ background: linear-gradient(90deg, rgba(167,198,251,1) 0%, rgba(217,131,163,1) 1
   color: #000000;
 }
 .start-text12 {
-  color: #ff4d4f;
+  color: #bf00d4;
 }
 .start-container09 {
   flex: 0 0 auto;
