@@ -238,7 +238,7 @@ try {
     flex-direction: column;
     background-size: cover;
     justify-content: flex-start;
-    background-image: url('https://post.healthline.com/wp-content/uploads/2020/11/834360-Best-Babysitting-websites-and-Apps-1200x628-Facebook-1200x628.jpg');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c0/Salon_Shop.jpg');
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -292,7 +292,7 @@ try {
     color: #000000;
   }
   .nanny-profile-text02 {
-    color: #ff4d4f;
+    color: rgb(152, 0, 217);
   }
   .nanny-profile-container05 {
     width: 50%;
@@ -312,7 +312,7 @@ try {
     color: #000000;
   }
   .nanny-profile-text05 {
-    color: #ff4d4f;
+    color: rgb(152, 0, 217);
   }
   .nanny-profile-container06 {
     width: 50%;
@@ -331,7 +331,7 @@ try {
     color: #000000;
   }
   .nanny-profile-text08 {
-    color: #ff4d4f;
+    color: rgb(152, 0, 217);
   }
   .nanny-profile-container07 {
     width: 50%;
@@ -350,10 +350,10 @@ try {
     color: #000000;
   }
   .nanny-profile-text11 {
-    color: #ff4d4f;
+    color: rgb(152, 0, 217);
   }
   .nanny-profile-text12 {
-    color: #ff4d4f;
+    color: rgb(152, 0, 217);
   }
   .nanny-profile-text13 {
     font-size: 32px;
@@ -366,7 +366,7 @@ try {
     color: #000000;
   }
   .nanny-profile-text15 {
-    color: #ff4d4f;
+    color: rgb(152, 0, 217);
   }
   .nanny-profile-text16 {
     font-size: 18px;
@@ -386,7 +386,7 @@ try {
     font-weight: 700;
   }
   .nanny-profile-text19 {
-    color: #ff4d4f;
+    color: rgb(152, 0, 217);
   }
   .nanny-profile-container08 {
     flex: 0 0 auto;
@@ -460,7 +460,7 @@ try {
     border-radius: 56px;
     padding-right: var(--dl-space-space-oneandhalfunits);
     padding-bottom: var(--dl-space-space-unit);
-    background-color: #ff4d4f;
+    background-color: rgb(152, 0, 217);
   }
   .nanny-profile-find:hover {
     opacity: 0.5;
@@ -484,7 +484,7 @@ try {
       font-weight: 700;
     }
     .nanny-profile-text05 {
-      color: #ff4d4f;
+      color: rgb(152, 0, 217);
     }
     .nanny-profile-text06 {
       font-size: 21px;
@@ -497,7 +497,7 @@ try {
       font-weight: 700;
     }
     .nanny-profile-text08 {
-      color: #ff4d4f;
+      color: rgb(152, 0, 217);
     }
     .nanny-profile-text09 {
       font-size: 21px;
@@ -510,11 +510,11 @@ try {
       font-weight: 700;
     }
     .nanny-profile-text11 {
-      color: #ff4d4f;
+      color: rgb(152, 0, 217);
       font-weight: 700;
     }
     .nanny-profile-text12 {
-      color: #ff4d4f;
+      color: rgb(152, 0, 217);
     }
     .nanny-profile-text13 {
       font-size: 28px;
@@ -526,7 +526,7 @@ try {
       color: #000000;
     }
     .nanny-profile-text15 {
-      color: #ff4d4f;
+      color: rgb(152, 0, 217);
     }
     .nanny-profile-text17 {
       font-size: 28px;

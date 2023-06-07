@@ -463,7 +463,7 @@ link.value = `https://pwuhngcxepwfvynqirsc.supabase.co/storage/v1/object/public/
   <style scoped>
   .errorClass{
     margin-top: 5%;
-color: #ff8896;
+color: rgb(152, 0, 217);
 font-size: medium;
   }
   .start-container {
@@ -476,7 +476,7 @@ font-size: medium;
     justify-content: flex-start;
    
     background: rgb(167,198,251);
-background: linear-gradient(90deg, rgba(167,198,251,1) 0%, rgba(217,131,163,1) 100%, rgba(121,9,109,1) 100%);
+background: linear-gradient(90deg, rgba(167,198,251,1) 0%, rgb(152, 0, 217) 100%, rgba(121,9,109,1) 100%);
   }
   .start-container1 {
     width: 100%;
@@ -486,7 +486,7 @@ background: linear-gradient(90deg, rgba(167,198,251,1) 0%, rgba(217,131,163,1) 1
     flex-direction: column;
     background-size: cover;
     justify-content: flex-start;
-    background-image: url('https://post.healthline.com/wp-content/uploads/2020/11/834360-Best-Babysitting-websites-and-Apps-1200x628-Facebook-1200x628.jpg');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c0/Salon_Shop.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -570,10 +570,10 @@ background: linear-gradient(90deg, rgba(167,198,251,1) 0%, rgba(217,131,163,1) 1
     background-color: #ffffff;
   }
   .start-container5:focus {
-    background-color: #ffb2bb;
+    background-color: rgb(152, 0, 217);
   }
   .start-container5:hover {
-    background-color: #ffb2bb;
+    background-color: rgb(152, 0, 217);
   }
   .start-text04 {
     font-size: 22px;
@@ -600,10 +600,10 @@ background: linear-gradient(90deg, rgba(167,198,251,1) 0%, rgba(217,131,163,1) 1
     background-color: #ffffff;
   }
   .start-container6:focus {
-    background-color: #ffb2bb;
+    background-color: rgb(152, 0, 217);
   }
   .start-container6:hover {
-    background-color: #ffb2bb;
+    background-color: rgb(152, 0, 217);
   }
   .start-text07 {
     font-size: 22px;
@@ -629,7 +629,7 @@ background: linear-gradient(90deg, rgba(167,198,251,1) 0%, rgba(217,131,163,1) 1
   border-radius: 56px;
   padding-right: var(--dl-space-space-oneandhalfunits);
   padding-bottom: var(--dl-space-space-unit);
-  background-color: rgb(255, 77, 79);
+  background-color: rgb(152, 0, 217);
 }
 .login-find:hover {
   opacity: 0.5;

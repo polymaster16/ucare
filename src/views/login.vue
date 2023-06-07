@@ -116,7 +116,7 @@ onMounted(() => {
 .create-acc{
   margin-top: 5%;
   margin-bottom: 5%;
-  color: #ff4d4f;
+  color: rgb(152, 0, 217);
   font-size: 14px;
   font-style: normal;
   font-family: Poppins;
@@ -142,7 +142,7 @@ onMounted(() => {
   flex-direction: column;
   background-size: cover;
   justify-content: flex-start;
-  background-image: url('https://post.healthline.com/wp-content/uploads/2020/11/834360-Best-Babysitting-websites-and-Apps-1200x628-Facebook-1200x628.jpg');
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c0/Salon_Shop.jpg');
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -174,7 +174,7 @@ onMounted(() => {
   font-weight: 700;
 }
 .login-text02 {
-  color: #ff4d4f;
+  color: rgb(152, 0, 217);
 }
 .login-container4 {
   width: 566px;
@@ -193,7 +193,7 @@ onMounted(() => {
   margin-left: var(--dl-space-space-halfunit);
 }
 .login-text06 {
-  color: #ff4d4f;
+  color: rgb(152, 0, 217);
 }
 .login-textinput {
   width: 554px;
@@ -231,7 +231,7 @@ onMounted(() => {
   border-radius: 56px;
   padding-right: var(--dl-space-space-oneandhalfunits);
   padding-bottom: var(--dl-space-space-unit);
-  background-color: rgb(255, 77, 79);
+  background-color: rgb(152, 0, 217);
 }
 .login-find:hover {
   opacity: 0.5;
@@ -262,7 +262,7 @@ onMounted(() => {
     font-size: 32px;
   }
   .login-text02 {
-    color: #ff4d4f;
+    color: rgb(152, 0, 217);
   }
   .login-find {
     width: 137px;
@@ -286,7 +286,7 @@ onMounted(() => {
     font-weight: 700;
   }
   .login-text02 {
-    color: #ff4d4f;
+    color: rgb(152, 0, 217);
   }
   .login-container4 {
     width: 100%;
